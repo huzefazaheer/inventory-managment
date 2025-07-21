@@ -1,5 +1,10 @@
-const {Pool} = require("pg")
+const pool = require("./pool")
 
-module.exports = new Pool({
-    connectionString: process.env.DB
-})
+async function getAllItems(){
+    const {rows} = await pool.query("SELECT * FROM inventory")
+    return rows 
+}
+
+module.exports = {
+    getAllItems
+}

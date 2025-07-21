@@ -1,6 +1,7 @@
 require("dotenv").config({path:"./.env"})
 const express = require('express')
 const path = require('path')
+const { getAllItems } = require("./models/db")
 const app = express()
 const PORT = process.env.PORT || 8080
 
@@ -10,8 +11,9 @@ const viewsPath = path.join(__dirname, "/views")
 app.set("view engine", "ejs")
 app.set("views", viewsPath)
 
-app.get("/", (req, res) => {
-    res.render('index')
+app.get("/", async (req, res) => {
+    const data = await getAllItems()
+    res.render('index', {data: data})
 })
 
 app.listen(PORT, ()=> [

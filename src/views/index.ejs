@@ -6,6 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <% data.forEach(item => { %>
+        <div class="item">
+        <p class="partno"><%= item.partno %></p>
+        <p class="name"><%= item.name %></p>
+        <p class="category"><%= item.category %></p>
+        <p class="man"><%= item.manufacturer %></p>
+        <p class="val"><%= item.value %></p>
+    </div>
+    <% })%>
 </body>
 </html>
