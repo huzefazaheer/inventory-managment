@@ -1,7 +1,7 @@
 require("dotenv").config({path:"./.env"})
 const express = require('express')
 const path = require('path')
-const { getAllItems, getAllByCat, removeById, addItem } = require("./models/db")
+const { getAllItems, getAllByCat, removeById, addItem, getById, updateById } = require("./models/db")
 const app = express()
 const PORT = process.env.PORT || 8080
 
@@ -23,13 +23,35 @@ app.get("/", async (req, res) => {
     }
 })
 
+const emptyitem = {
+    id: 0,
+    partno: '',
+    name: '',
+    category: '',
+    description: '',
+    manufacturer: '',
+    value: '',
+    datasheet_url: ''
+  }
+
 app.get("/new", (req, res) => {
-    res.render('newitem')
+    res.render('newitem', {values:emptyitem, action:"/new"})
 })
 
 app.post("/new", (req, res) => {
     const item = req.body;
     addItem(item)
+    res.redirect("/")
+})
+
+app.get("/edit/:id", async (req, res) => {
+    const data = await getById(req.params.id)
+    res.render('newitem', {values:data[0], action:"/edit/"+req.params.id})
+})
+
+app.post("/edit/:id", async (req, res) => {
+    const item = req.body;
+    await updateById(req.params.id, item)
     res.redirect("/")
 })
 

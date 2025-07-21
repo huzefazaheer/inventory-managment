@@ -10,14 +10,14 @@
     <title>Inventory Manager</title>
 </head>
 <body>
-    <form method="post" action="/new">
+    <form method="post" action=<%= action %>>
         <div class="input">
             <label for="name">Part Name</label>
-            <input type="text" id="name" name="name">
+            <input type="text" id="name" name="name" value= <%= values.name %>>
         </div>
         <div class="input">
-            <label for="partid">Part Number</label>
-            <input type="text" id="partid" name="partid">
+            <label for="partno">Part Number</label>
+            <input type="text" id="partno" name="partno" value= <%= values.partno %>>
         </div>
         <label for="cat">Choose a category:</label>
 
@@ -30,19 +30,19 @@
         </select> 
         <div class="input">
             <label for="manu">Manufacturer</label>
-            <input type="text" id="manu" name="manu">
+            <input type="text" id="manu" name="manu" value= <%= values.manufacturer %>>
         </div>
         <div class="input">
             <label for="value">Value</label>
-            <input type="text" id="value" name="value">
+            <input type="text" id="value" name="value" value= <%= values.value %>>
         </div>
         <div class="input">
             <label for="dsheet">Datasheet URL</label>
-            <input type="text" id="dsheet" name="dsheet">
+            <input type="text" id="dsheet" name="dsheet" value= <%= values.datasheet_url %>>
         </div>
         <div class="input">
             <label for="desc">Description</label>
-            <textarea type="text" id="desc" name="desc"></textarea>
+            <textarea type="text" id="desc" name="desc"><%= values.description %></textarea>
         </div>
         <button type="submit">Submit</button>
     </form>
