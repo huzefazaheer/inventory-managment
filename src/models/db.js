@@ -14,6 +14,10 @@ async function removeById(id) {
     await pool.query("DELETE FROM inventory WHERE id = $1", [id])
 }
 
+async function addItem(item) {
+    await pool.query("INSERT INTO inventory (partno, name, category, description, manufacturer, value, datasheet_url) VALUES ($1, $2, $3, $4, $5, $6, $7)", [item.partid, item.name, item.cat, item.desc, item.manu, item.value, item.dsheet])
+}
+
 module.exports = {
-    getAllItems, getAllByCat, removeById
+    getAllItems, getAllByCat, removeById, addItem
 }

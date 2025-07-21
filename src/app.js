@@ -1,9 +1,11 @@
 require("dotenv").config({path:"./.env"})
 const express = require('express')
 const path = require('path')
-const { getAllItems, getAllByCat, removeById } = require("./models/db")
+const { getAllItems, getAllByCat, removeById, addItem } = require("./models/db")
 const app = express()
 const PORT = process.env.PORT || 8080
+
+app.use(express.urlencoded({ extended: true }));
 
 const staticPath = path.join(__dirname, "/public")
 app.use(express.static(staticPath))
@@ -26,8 +28,9 @@ app.get("/new", (req, res) => {
 })
 
 app.post("/new", (req, res) => {
-    const data = req.body;
-    console.log(data)
+    const item = req.body;
+    addItem(item)
+    res.redirect("/")
 })
 
 app.get("/delete/:id", (req, res) => {
