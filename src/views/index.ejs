@@ -55,7 +55,6 @@
             <th class="nameheading">Name</th>
             <th class="catheading">Category</th>
             <th class="manuheading">Manufacturer</th>
-            <th class="valueheading">Value</th>
         </tr>
     <% data.forEach(item => { %>
         <tr class="item">
@@ -63,7 +62,6 @@
         <td class="name"><a href="/item/<%= item.id%>"><%= item.name %></a></td>
         <td class="category"><%= item.category %></td>
         <td class="man"><%= item.manufacturer %></td>
-        <td class="val"><%= item.value %></td>
         <td><a href="/edit/<%= item.id %>" id="edit">Edit</a></td>
         <td><a href="/delete/<%= item.id %>" id="del">Delete</a></td>
         </tr>

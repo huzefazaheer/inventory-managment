@@ -103,15 +103,15 @@ th{
 }
 
 .partheading{
-    padding-right: 150px;
+    padding-right: 200px;
 }
 
 .nameheading{
-    padding-right: 220px;
+    padding-right: 280px;
 }
 
 .catheading{
-    padding-right: 90px;
+    padding-right: 120px;
 }
 
 .manuheading{
@@ -294,4 +294,5 @@ form#query button{
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
+    width: 75vw;
 }

@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>Inventory Manager</title>
 </head>
 <body class="formpage">
@@ -42,19 +42,21 @@
             <input type="text" id="manu" name="manu" value= <%= values.manufacturer %>>
         </div>
         <div class="input">
-            <label for="value">Value</label>
-            <input type="text" id="value" name="value" value= <%= values.value %>>
+            <label for="dsheet">Datasheet URL</label>
+            <input type="text" id="dsheet" name="dsheet" value= <%= values.datasheet_url %>>
         </div>
         </div>
 
         <div class="input">
-            <label for="dsheet">Datasheet URL</label>
-            <input type="text" id="dsheet" name="dsheet" value= <%= values.datasheet_url %>>
-        </div>
-        <div class="input">
             <label for="desc">Description</label>
             <textarea type="text" id="desc" name="desc"><%= values.description %></textarea>
         </div>
+
+        <div class="input">
+            <label for="specs">Specifications (json)</label>
+            <textarea type="text" id="specs" name="specs"><%= JSON.stringify(values.specs) %></textarea>
+        </div>
+
         <button type="submit">Submit</button>
     </form>
 
