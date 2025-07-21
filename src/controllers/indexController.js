@@ -19,7 +19,7 @@ async function getHome(req, res) {
         })
     }
 
-    res.render('index', {data: allData})
+    res.render('index', {data: allData, cat:req.query.cat, sn:req.query.sn, sid:req.query.sid})
     
 }
 

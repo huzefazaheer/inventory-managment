@@ -31,18 +31,19 @@
     <div class="querytools">
         <form id="query" action="/" method="get">
             <div class="searchinputs">
-                <input type="text" name="pno" id="pno" placeholder="Part Number...">
-                <input type="text" name="pname" id="pname" placeholder="Part Name...">
+                <input type="text" name="sid" id="sid" placeholder="Part Number..." value=<%= sid || '' %>>
+                <input type="text" name="sn" id="sn" placeholder="Part Name..." value=<%= sn || '' %>>
                 <select name="cat" id="cat">
                     <option value="" disabled selected hidden>Select Category</option>
-                    <option value="resistor">Resistor</option>
-                    <option value="capacitor">Capacitor</option>
-                    <option value="microcontroller">Microcontroller</option>
-                    <option value="opamp">OpAmp</option>
-                    <option value="diode">Diode</option>
-                    <option value="ic">IC</option>
-                    <option value="transistor">Transistor</option>
-                    <option value="sensor">Sensor</option>
+                    <option value="">None</option>
+                    <option value="resistor" <%= cat == 'resistor' ? 'selected' : '' %>>Resistor</option>
+                    <option value="capacitor" <%= cat == 'capacitor' ? 'selected' : '' %>>Capacitor</option>
+                    <option value="microcontroller" <%= cat == 'microcontroller' ? 'selected' : '' %>>Microcontroller</option>
+                    <option value="opamp" <%= cat == 'opamp' ? 'selected' : '' %>>OpAmp</option>
+                    <option value="diode" <%= cat == 'diode' ? 'selected' : '' %>>Diode</option>
+                    <option value="ic" <%= cat == 'ic' ? 'selected' : '' %>>IC</option>
+                    <option value="transistor" <%= cat == 'transistor' ? 'selected' : '' %>>Transistor</option>
+                    <option value="sensor" <%= cat == 'sensor' ? 'selected' : '' %>>Sensor</option>
                 </select>
             </div>
             <button type="submit">Search</button> 

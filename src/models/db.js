@@ -16,11 +16,13 @@ async function getAllByCat(category) {
 }
 
 async function searchByName(name) {
-    const {rows} = await pool.query("SELECT * FROM inventory WHERE name ILIKE ($1)", [name])
+    name += "%"
+    const {rows} = await pool.query("SELECT * FROM inventory WHERE name ILIKE ($1)", [name+"%"])
     return rows
 }
 
 async function searchByPartId(id) {
+    id += "%"
     const {rows} = await pool.query("SELECT * FROM inventory WHERE partno ILIKE ($1)", [id])
     return rows
 }
