@@ -11,7 +11,7 @@ body{
     flex-basis: 108px;
     background-color: #FFFFFF;
     height: 100vh;
-    margin-right: 8vw;
+    margin-right: 5vw;
     padding-top: 40px;
 }
 
@@ -43,6 +43,98 @@ body{
 
 .call{
     margin-top: 200px;
+}
+
+h1, .top a{
+    margin-top: 64px;
+    margin-bottom: 20px;
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.top a{
+    color: #3F4CB3;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+
+table{
+    margin-top: 10%;
+    border-collapse: collapse;
+}
+
+tr{
+    padding: 10px;
+}
+
+th{
+    text-align: left;
+    color: #A0A0A1;
+}
+
+.idheading{
+    padding-right: 10px;
+}
+
+.partheading{
+    padding-right: 150px;
+}
+
+.nameheading{
+    padding-right: 220px;
+}
+
+.catheading{
+    padding-right: 90px;
+}
+
+.manuheading{
+padding-right: 100px;
+}
+
+.valueheading{
+    padding-right: 100px;
+}
+
+th{
+    padding-bottom: 10px;
+}
+
+td{
+    color: #4D4D4E;
+    font-size: 14px;
+    padding: 15px 0;
+}
+
+tr{
+    border-bottom: #C0C0C0 1px solid;
+}
+
+tr:last-of-type{
+    border-bottom: none;
+}
+
+td a{
+    text-decoration: none;
+}
+
+td a:first-of-type{
+    margin-right: 20px;
+    color: #3F4CB3;
+}
+
+.del{
+    color: #920f0f !important;
+}
+
+.category{
+    text-transform: capitalize;
 }
 
 /* .item{

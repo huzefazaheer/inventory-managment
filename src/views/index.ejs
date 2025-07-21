@@ -23,15 +23,18 @@
 
 
     <div class="left">
-         <a href="/new">Add New Item</a>
+    <div class="top">
+        <h1>Inventory</h1>
+        <a href="/new">+ Add Product</a>
+    </div>
     <table>
         <tr>
-            <th>#</th>
-            <th>Part ID</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Manufacturer</th>
-            <th>Value</th>
+            <th class="idheading">#</th>
+            <th class="partheading">Part ID</th>
+            <th class="nameheading">Name</th>
+            <th class="catheading">Category</th>
+            <th class="manuheading">Manufacturer</th>
+            <th class="valueheading">Value</th>
         </tr>
     <% data.forEach(item => { %>
         <tr class="item">
@@ -42,7 +45,7 @@
         <td class="man"><%= item.manufacturer %></td>
         <td class="val"><%= item.value %></td>
         <td><a href="/edit/<%= item.id %>">Edit</a></td>
-        <td><a href="/delete/<%= item.id %>">Delete</a></td>
+        <td><a href="/delete/<%= item.id %>" class="del">Delete</a></td>
         </tr>
     <% })%>
     </table>
