@@ -23,12 +23,36 @@
 
 
     <div class="left">
-    <h1><%=item.name%></h1>
-    <h2><%=item.partno%></h2>
-    <h5><%=item.category%></h5>
+    <div id="detailleft">
+        <div class="a">
+        <h1><%=item.name%></h1>
+        <h2>Part Id: <%=item.partno%></h2>
+    </div>
+    <div class="b">
+        <h3>Manufatured By: <%=item.manufacturer%></h3>
+        <h5 class="category">Type: <%=item.category%></h5>
+    
+    </div>
+    </div>
+    <h2 class="headingtitle">Description</h2>
     <p><%=item.description%></p>
     <a href="<%=item.datasheet_url%>">Datasheet</a>
-    <a href="/">Back</a>
+    <br/>
+    <table>
+         <tr>
+            <th class="partheading">Spec</th>
+            <th class="nameheading">Value</th>
+        </tr>
+        <% Object.keys(item.specs).forEach(spec => { %>
+        <tr class="spec">
+        <td class="category"><%= spec %></td>
+        <td class="man"><%= item.specs[spec] %></td>
+        </tr>
+    <% })%>
+    </table>
+    <br/>
+    <br/>
+    <a href="/" id="btnback"><img src="/back.svg" alt=""></a>
     </div>
 
 </body>

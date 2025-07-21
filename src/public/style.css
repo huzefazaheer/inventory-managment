@@ -18,8 +18,14 @@ body{
     padding-top: 40px;
 }
 
+.headingtitle{
+    font-weight: 500;
+    margin-top: 40px;
+}
+
 .left{
     margin-left: 15vw;
+    margin-right: 8vw;
 }
 
 .logo{
@@ -28,6 +34,13 @@ body{
     height: 48px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
+}
+
+#btnback{
+    position: fixed;
+    top: 66px;
+    left: 10%;
 }
 
 .icon{
@@ -274,4 +287,11 @@ form#query button{
 .urllink{
     text-decoration: underline;
     color: #6574e7;
+}
+
+#detailleft{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
 }

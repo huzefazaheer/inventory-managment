@@ -27,6 +27,7 @@ async function getHome(req, res) {
 async function getDetail(req, res) {
     const {id} = req.params
     const item = await getById(id)
+    console.log(item[0])
     res.render("detail", {item: item[0]})
 }
 

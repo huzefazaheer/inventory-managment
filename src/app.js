@@ -34,3 +34,6 @@ app.get("/delete/:id", getDelete)
 app.listen(PORT, ()=> [
     console.log("Server started on port: " + PORT)
 ])
+
+//TODO: Add admin protection
+//TODO: Work on detail page
