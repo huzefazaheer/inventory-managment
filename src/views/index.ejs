@@ -3,17 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Part ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Manufacturer</th>
+            <th>Value</th>
+        </tr>
     <% data.forEach(item => { %>
-        <div class="item">
-        <p class="partno"><%= item.partno %></p>
-        <p class="name"><%= item.name %></p>
-        <p class="category"><%= item.category %></p>
-        <p class="man"><%= item.manufacturer %></p>
-        <p class="val"><%= item.value %></p>
-    </div>
+        <tr class="item">
+        <td class="id"><%= item.id %></td>
+        <td class="partno"><%= item.partno %></td>
+        <td class="name"><%= item.name %></td>
+        <td class="category"><%= item.category %></td>
+        <td class="man"><%= item.manufacturer %></td>
+        <td class="val"><%= item.value %></td>
+        <td><a href="/delete/<%= item.id %>">Delete</a></td>
+        </tr>
     <% })%>
+    </table>
+
 </body>
 </html>

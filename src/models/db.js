@@ -5,6 +5,15 @@ async function getAllItems(){
     return rows 
 }
 
+async function getAllByCat(category) {
+    const {rows} = await pool.query("SELECT * FROM inventory WHERE category = $1", [category])
+    return rows
+}
+
+async function removeById(id) {
+    await pool.query("DELETE FROM inventory WHERE id = $1", [id])
+}
+
 module.exports = {
-    getAllItems
+    getAllItems, getAllByCat, removeById
 }
