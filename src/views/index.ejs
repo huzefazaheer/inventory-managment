@@ -27,9 +27,27 @@
         <h1>Inventory</h1>
         <a href="/new" class="addproduct">+ Add Product</a>
     </div>
+
+    <div class="querytools">
+        <form id="query" action="/" method="get">
+            <div class="searchinputs">
+                <input type="text" name="pno" id="pno" placeholder="Part Number...">
+                <input type="text" name="pname" id="pname" placeholder="Part Name...">
+                <select name="cat" id="cat">
+                    <option value="" disabled selected hidden>Select Category</option>
+                    <option value="resistor">Resistor</option>
+                    <option value="capacitor">Capacitor</option>
+                    <option value="microcontroller">Microcontroller</option>
+                    <option value="opamp">OpAmp</option>
+                    <option value="diode">Diode</option>
+                </select>
+            </div>
+            <button type="submit">Search</button> 
+        </form>
+    </div>
+
     <table>
         <tr>
-            <th class="idheading">#</th>
             <th class="partheading">Part ID</th>
             <th class="nameheading">Name</th>
             <th class="catheading">Category</th>
@@ -38,7 +56,6 @@
         </tr>
     <% data.forEach(item => { %>
         <tr class="item">
-        <td class="id"><%= item.id %></td>
         <td class="partno"><%= item.partno %></td>
         <td class="name"><%= item.name %></td>
         <td class="category"><%= item.category %></td>

@@ -68,7 +68,7 @@ h1, .top a{
 
 
 table{
-    margin-top: 10%;
+    margin-top: 5%;
     border-collapse: collapse;
 }
 
@@ -107,6 +107,7 @@ padding-right: 100px;
 
 th{
     padding-bottom: 10px;
+    font-weight: 500;
 }
 
 td{
@@ -116,7 +117,7 @@ td{
 }
 
 tr{
-    border-bottom: #C0C0C0 1px solid;
+    border-bottom: #d2d1d1 1px solid;
 }
 
 tr:last-of-type{
@@ -228,4 +229,32 @@ label{
 
 select, textarea, input{
     font-family: Arial, Helvetica, sans-serif;
+}
+
+form#query{
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.searchinputs{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+
+form#query select, form#query input{
+    padding-left: 10px;
+    border-radius: 20px;
+    border: 1px solid #8F8F8F;
+    margin: 0;
+}
+
+form#query button{
+    margin: 0;
+    padding: 5px 10px;
+    width: 10%;
+    border-radius: 20px;
+    font-size: 16px;
 }

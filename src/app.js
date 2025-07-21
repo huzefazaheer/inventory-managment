@@ -1,7 +1,7 @@
 require("dotenv").config({path:"./.env"})
 const express = require('express')
 const path = require('path')
-const { getAllItems, getAllByCat, removeById, addItem, getById, updateById } = require("./models/db")
+const { getAllItems, getAllByCat, removeById, addItem, getById, updateById, getAllBySearch, searchByName, searchByPartId } = require("./models/db")
 const app = express()
 const PORT = process.env.PORT || 8080
 
@@ -13,14 +13,31 @@ const viewsPath = path.join(__dirname, "/views")
 app.set("view engine", "ejs")
 app.set("views", viewsPath)
 
+function getEqualData(){
+
+}
+
 app.get("/", async (req, res) => {
+    let allData = await getAllItems();
     if(req.query.cat){
         const data = await getAllByCat(req.query.cat)
-        res.render('index', {data: data})
-    }else{
-        const data = await getAllItems()
-        res.render('index', {data: data})
+        allData = allData.filter(data1 => {
+            return data.some(data2 => data1.id == data2.id)
+        })
+    }else if(req.query.sn){
+        const data = await searchByName(req.query.sn)
+        allData = allData.filter(data1 => {
+            return data.some(data2 => data1.id == data2.id)
+        })
+    }else if(req.query.sid){
+        const data = await searchByPartId(req.query.sid)
+        allData = allData.filter(data1 => {
+            return data.some(data2 => data1.id == data2.id)
+        })
     }
+
+    res.render('index', {data: allData})
+    
 })
 
 const emptyitem = {

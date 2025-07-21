@@ -15,6 +15,16 @@ async function getAllByCat(category) {
     return rows
 }
 
+async function searchByName(name) {
+    const {rows} = await pool.query("SELECT * FROM inventory WHERE name ILIKE ($1)", [name])
+    return rows
+}
+
+async function searchByPartId(id) {
+    const {rows} = await pool.query("SELECT * FROM inventory WHERE partno ILIKE ($1)", [id])
+    return rows
+}
+
 async function removeById(id) {
     await pool.query("DELETE FROM inventory WHERE id = $1", [id])
 }
@@ -29,5 +39,5 @@ async function updateById(id1,item) {
 }
 
 module.exports = {
-    getAllItems, getAllByCat, removeById, addItem, getById, updateById
+    getAllItems, getAllByCat, removeById, addItem, getById, updateById, searchByName, searchByPartId
 }
