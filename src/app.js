@@ -35,7 +35,7 @@ const emptyitem = {
   }
 
 app.get("/new", (req, res) => {
-    res.render('newitem', {values:emptyitem, action:"/new"})
+    res.render('newitem', {values:emptyitem, action:"/new", headingtxt:"Add Item"})
 })
 
 app.post("/new", (req, res) => {
@@ -46,7 +46,7 @@ app.post("/new", (req, res) => {
 
 app.get("/edit/:id", async (req, res) => {
     const data = await getById(req.params.id)
-    res.render('newitem', {values:data[0], action:"/edit/"+req.params.id})
+    res.render('newitem', {values:data[0], action:"/edit/"+req.params.id, headingtxt:"Edit Item"})
 })
 
 app.post("/edit/:id", async (req, res) => {

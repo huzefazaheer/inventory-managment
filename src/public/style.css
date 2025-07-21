@@ -1,10 +1,13 @@
 body{
     font-family: "Montserrat", sans-serif;
-    display: flex;
-    flex-direction: row;
     background-color: #F8F9FA;
     margin: 0;
     padding: 0;
+}
+
+.homepage{
+    display: flex;
+    flex-direction: row;
 }
 
 .sidebar{
@@ -129,15 +132,100 @@ td a:first-of-type{
     color: #3F4CB3;
 }
 
-.del{
-    color: #920f0f !important;
+#del{
+    color: #920f0f;
+}
+
+#del:hover{
+    color: #643131 !important;
+}
+
+td a:first-of-type:hover{
+    color: #061163;
 }
 
 .category{
     text-transform: capitalize;
 }
 
-/* .item{
+button{
+    background-color: #3F4CB3;
+    color: white;
+    padding: 20px 80px;
+    border: none;
+    /* font-weight: bold; */
+    font-size: 18px;
+}
+
+.formpage{
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-right: 5%;
+}
+
+form{
     display: flex;
-    flex-direction: row;
-} */
+    flex-direction: column;
+    /* max-width: 50%; */
+}
+
+.inputgroup{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 200px;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+button{
+    margin-top: 5%;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover{
+    background-color: #2e3989;
+}
+
+.addproduct:hover{
+    color: #2e3989;
+}
+
+button:active{
+    background-color: #ffffff;
+    color: black;
+    border: solid 1px black;
+}
+
+.manu{
+    margin-top: 20px;
+}
+
+select{
+    margin-top: 10px;
+    height: 30px;
+    background-color: #FFFFFF;
+    border: 1px #919197  solid;
+}
+
+textarea{
+    height: 100px;
+    resize: none;
+}
+
+input{
+    height: 25px;
+}
+
+label{
+    margin-bottom: 5px;
+}
+
+select, textarea, input{
+    font-family: Arial, Helvetica, sans-serif;
+}

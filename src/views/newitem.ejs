@@ -9,15 +9,18 @@
     <link rel="stylesheet" href="style.css">
     <title>Inventory Manager</title>
 </head>
-<body>
+<body class="formpage">
+    <h2><%=headingtxt%></h2>
     <form method="post" action=<%= action %>>
-        <div class="input">
+        <div class="inputgroup">
+            <div class="input">
             <label for="name">Part Name</label>
             <input type="text" id="name" name="name" value= <%= values.name %>>
         </div>
         <div class="input">
             <label for="partno">Part Number</label>
             <input type="text" id="partno" name="partno" value= <%= values.partno %>>
+        </div>
         </div>
         <label for="cat">Choose a category:</label>
 
@@ -28,7 +31,9 @@
             <option value="opamp">OpAmp</option>
             <option value="diode">Diode</option>
         </select> 
-        <div class="input">
+       
+        <div class="inputgroup manu">
+             <div class="input">
             <label for="manu">Manufacturer</label>
             <input type="text" id="manu" name="manu" value= <%= values.manufacturer %>>
         </div>
@@ -36,6 +41,8 @@
             <label for="value">Value</label>
             <input type="text" id="value" name="value" value= <%= values.value %>>
         </div>
+        </div>
+
         <div class="input">
             <label for="dsheet">Datasheet URL</label>
             <input type="text" id="dsheet" name="dsheet" value= <%= values.datasheet_url %>>
