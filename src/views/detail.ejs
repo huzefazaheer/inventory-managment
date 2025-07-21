@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <title>Inventory Manager</title>
+</head>
+<body class="homepage">
+    <div class="sidebar">
+        <a href="/"><img src="/logo.svg" alt="" class="logo"></a>
+        <div class="mainmenu">
+            <img class="icon" src="/bookmark.svg" alt="" class="logo">
+            <img class="icon" src="/logs.svg" alt="" class="logo">
+            <img class="icon" src="/send.svg" alt="" class="logo">
+            <img class="icon" src="/user.svg" alt="" class="logo">
+        </div>
+        <img class="icon call" src="/contact.svg" alt="" class="logo">
+    </div>
+
+
+    <div class="left">
+    <h1><%=item.name%></h1>
+    <h2><%=item.partno%></h2>
+    <h5><%=item.category%></h5>
+    <p><%=item.description%></p>
+    <a href="<%=item.datasheet_url%>">Datasheet</a>
+    <a href="/">Back</a>
+    </div>
+
+</body>
+</html>
+
+
+
+

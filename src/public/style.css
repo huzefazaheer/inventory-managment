@@ -11,11 +11,15 @@ body{
 }
 
 .sidebar{
-    flex-basis: 108px;
+    position: fixed;
+    width: 108px;
     background-color: #FFFFFF;
     height: 100vh;
-    margin-right: 5vw;
     padding-top: 40px;
+}
+
+.left{
+    margin-left: 15vw;
 }
 
 .logo{
@@ -40,8 +44,8 @@ body{
 
 .mainmenu .icon{
     margin-top: 40px;
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
 }
 
 .call{
@@ -126,9 +130,14 @@ tr:last-of-type{
 
 td a{
     text-decoration: none;
+    color: #4D4D4E;
 }
 
-td a:first-of-type{
+td a:hover{
+    color: #919194;
+}
+
+#edit{
     margin-right: 20px;
     color: #3F4CB3;
 }
@@ -138,11 +147,11 @@ td a:first-of-type{
 }
 
 #del:hover{
-    color: #643131 !important;
+    color: rgb(186, 87, 87) !important;
 }
 
-td a:first-of-type:hover{
-    color: #061163;
+#edit:hover{
+    color: #6574e7;
 }
 
 .category{
@@ -243,6 +252,9 @@ form#query{
     align-items: center;
     gap: 40px;
 }
+form#query select{
+    padding: 0 25px;
+}
 
 form#query select, form#query input{
     padding-left: 10px;
@@ -253,8 +265,13 @@ form#query select, form#query input{
 
 form#query button{
     margin: 0;
-    padding: 5px 10px;
+    padding: 6px 10px;
     width: 10%;
-    border-radius: 20px;
+    border-radius: 25px;
     font-size: 16px;
+}
+
+.urllink{
+    text-decoration: underline;
+    color: #6574e7;
 }

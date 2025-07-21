@@ -11,7 +11,7 @@
 </head>
 <body class="homepage">
     <div class="sidebar">
-        <img src="/logo.svg" alt="" class="logo">
+        <a href="/"><img src="/logo.svg" alt="" class="logo"></a>
         <div class="mainmenu">
             <img class="icon" src="/bookmark.svg" alt="" class="logo">
             <img class="icon" src="/logs.svg" alt="" class="logo">
@@ -40,6 +40,9 @@
                     <option value="microcontroller">Microcontroller</option>
                     <option value="opamp">OpAmp</option>
                     <option value="diode">Diode</option>
+                    <option value="ic">IC</option>
+                    <option value="transistor">Transistor</option>
+                    <option value="sensor">Sensor</option>
                 </select>
             </div>
             <button type="submit">Search</button> 
@@ -56,12 +59,12 @@
         </tr>
     <% data.forEach(item => { %>
         <tr class="item">
-        <td class="partno"><%= item.partno %></td>
-        <td class="name"><%= item.name %></td>
+        <td class="partno"><a href="/item/<%= item.id%>"><%= item.partno %></a></td>
+        <td class="name"><a href="/item/<%= item.id%>"><%= item.name %></a></td>
         <td class="category"><%= item.category %></td>
         <td class="man"><%= item.manufacturer %></td>
         <td class="val"><%= item.value %></td>
-        <td><a href="/edit/<%= item.id %>">Edit</a></td>
+        <td><a href="/edit/<%= item.id %>" id="edit">Edit</a></td>
         <td><a href="/delete/<%= item.id %>" id="del">Delete</a></td>
         </tr>
     <% })%>
