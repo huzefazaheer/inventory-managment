@@ -18,13 +18,16 @@ const postEdit = [
     async function p(req, res){
     const errors = validationResult(req)
     const item = req.body;
-    console.log(item)
-    if(errors.isEmpty()){
+    if(req.isAdmin){
+        if(errors.isEmpty()){
         await updateById(req.params.id, item)
         res.redirect("/") 
     }else {
         const data = await getById(req.params.id)
         res.render('newitem', {values:item, action:"/edit/"+req.params.id, headingtxt:"Edit Item", errors:errors.array()})
+    }
+    }else{
+        res.redirect("/")
     }
     }
 ]

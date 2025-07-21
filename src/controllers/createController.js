@@ -28,12 +28,15 @@ const postCreate = [
     function p(req, res) {
         const errors = validationResult(req)
         const item = req.body;
-        console.log(item)
-        if(errors.isEmpty()){
+        if(req.isAdmin){
+            if(errors.isEmpty()){
             addItem(item)
             res.redirect("/")
         }else{
             res.render('newitem', {values:item, action:"/new", headingtxt:"Add Item",  errors:errors.array()})
+        }
+        }else{
+            res.redirect("/")
         }
     }
 ]

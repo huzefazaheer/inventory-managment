@@ -17,23 +17,31 @@ const viewsPath = path.join(__dirname, "/views")
 app.set("view engine", "ejs")
 app.set("views", viewsPath)
 
+function checkAdmin(req, res, next) {
+    // For testing, always true. In a real app, you'd check session, user role, etc.
+    req.isAdmin = false; // Attach isAdmin status to the request object
+    next();
+}
+
 app.get("/", getHome)
 
 app.get("/item/:id", getDetail)
 
 app.get("/new", getCreate)
 
-app.post("/new", postCreate)
+app.post("/new", checkAdmin, postCreate)
 
 app.get("/edit/:id", getEdit)
 
-app.post("/edit/:id", postEdit)
+app.post("/edit/:id", checkAdmin, postEdit)
 
-app.get("/delete/:id", getDelete)
+app.get("/delete/:id", checkAdmin, getDelete)
 
 app.listen(PORT, ()=> [
     console.log("Server started on port: " + PORT)
 ])
+
+module.exports = {checkAdmin}
 
 //TODO: Add admin protection
 //TODO: Work on detail page
