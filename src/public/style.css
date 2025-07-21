@@ -205,7 +205,7 @@ form{
 }
 
 button{
-    margin-top: 5%;
+    margin-top: 10px;
     width: 20%;
     margin-left: auto;
     margin-right: auto;
@@ -237,8 +237,14 @@ select{
 }
 
 textarea{
-    height: 100px;
+    height: 80px;
     resize: none;
+}
+
+#errortxt{
+    color: rgb(205, 53, 53);
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 input{

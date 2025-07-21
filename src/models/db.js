@@ -32,12 +32,12 @@ async function removeById(id) {
 }
 
 async function addItem(item) {
-    await pool.query("INSERT INTO inventory (partno, name, category, description, manufacturer, specs, datasheet_url) VALUES ($1, $2, $3, $4, $5, $6, $7)", [item.partno, item.name, item.cat, item.desc, item.manu, JSON.parse(item.specs), item.dsheet])
+    await pool.query("INSERT INTO inventory (partno, name, category, description, manufacturer, specs, datasheet_url) VALUES ($1, $2, $3, $4, $5, $6, $7)", [item.partno, item.name, item.cat, item.description, item.manufacturer, JSON.parse(item.specs), item.datasheet_url])
 }
 
 async function updateById(id1,item) {
     await pool.query("UPDATE inventory SET partno = $1, name = $2, category = $3, description = $4, manufacturer = $5, specs = $6, datasheet_url = $7 WHERE id = $8",
-        [item.partno, item.name, item.cat, item.desc, item.manu, item.specs, item.dsheet, id1])
+        [item.partno, item.name, item.cat, item.description, item.manufacturer, JSON.parse(item.specs), item.datasheet_url, id1])
 }
 
 module.exports = {
