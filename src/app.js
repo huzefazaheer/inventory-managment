@@ -21,6 +21,15 @@ app.get("/", async (req, res) => {
     }
 })
 
+app.get("/new", (req, res) => {
+    res.render('newitem')
+})
+
+app.post("/new", (req, res) => {
+    const data = req.body;
+    console.log(data)
+})
+
 app.get("/delete/:id", (req, res) => {
     if(req.params.id){
         removeById(req.params.id)

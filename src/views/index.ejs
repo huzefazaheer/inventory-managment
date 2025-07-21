@@ -7,9 +7,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Inventory Manager</title>
 </head>
 <body>
+    <a href="/new">Add New Item</a>
     <table>
         <tr>
             <th>#</th>
@@ -27,6 +28,7 @@
         <td class="category"><%= item.category %></td>
         <td class="man"><%= item.manufacturer %></td>
         <td class="val"><%= item.value %></td>
+        <td><a href="/edit/<%= item.id %>">Edit</a></td>
         <td><a href="/delete/<%= item.id %>">Delete</a></td>
         </tr>
     <% })%>

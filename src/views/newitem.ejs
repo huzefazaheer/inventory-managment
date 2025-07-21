@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Inventory Manager</title>
+</head>
+<body>
+    <form method="post" action="/new">
+        <div class="input">
+            <label for="name">Part Name</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="input">
+            <label for="partid">Part Number</label>
+            <input type="text" id="partid" name="partid">
+        </div>
+        <label for="cat">Choose a category:</label>
+
+        <select name="cat" id="cat">
+            <option value="resistor">Resistor</option>
+            <option value="capacitor">Capacitor</option>
+            <option value="mictrocontroller">Microcontroller</option>
+            <option value="opamp">OpAmp</option>
+            <option value="diode">Diode</option>
+        </select> 
+        <div class="input">
+            <label for="manu">Manufacturer</label>
+            <input type="text" id="manu" name="manu">
+        </div>
+        <div class="input">
+            <label for="value">Value</label>
+            <input type="text" id="value" name="value">
+        </div>
+        <div class="input">
+            <label for="partid">Part Number</label>
+            <input type="text" id="partid" name="partid">
+        </div>
+        <div class="input">
+            <label for="dsheet">Datasheet URL</label>
+            <input type="text" id="dsheet" name="dsheet">
+        </div>
+        <div class="input">
+            <label for="desc">Description</label>
+            <textarea type="text" id="desc" name="desc"></textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
